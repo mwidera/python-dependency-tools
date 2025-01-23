@@ -1,0 +1,15 @@
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
+WORKDIR /app/
+
+ENV UV_COMPILE_BYTECODE=1
+ENV UV_LINK_MODE=copy
+
+COPY pyproject.toml uv.lock ./
+
+RUN uv sync --frozen --no-dev
+
+ENV PORT 8000
+ENV DOCKER=true
+
+COPY main.py index.html ./
+COPY celery_app ./celery_app/

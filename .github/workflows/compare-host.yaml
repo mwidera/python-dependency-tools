@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -r requirements-dev.txt
   build-poetry:
     runs-on: ubuntu-latest
     steps:
@@ -54,13 +54,3 @@ jobs:
       run: uv python install
     - name: Install dependencies
       run: uv sync --all-extras --dev
-
-  build-docker:
-    runs-on: ubuntu-latest    
-    steps:
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      - name: Build and push
-        uses: docker/build-push-action@v4

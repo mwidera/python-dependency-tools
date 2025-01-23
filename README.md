@@ -3,7 +3,9 @@ Python environment management tools
 
 Testing various package managers on GitHub Actions
 
-Comparison results can be found [here](https://github.com/mwidera/python-packaging/actions/workflows/compare.yaml)
+Comparison results can be found [here](https://github.com/mwidera/python-packaging/actions/workflows/compare-host.yaml)
+
+Comparison for containerized builds [here](https://github.com/mwidera/python-packaging/actions/workflows/compare-docker.yaml)
 
 Tested tools:
 - [pip](https://pip.pypa.io/en/stable/)
