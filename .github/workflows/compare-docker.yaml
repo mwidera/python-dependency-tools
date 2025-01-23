@@ -1,4 +1,4 @@
-name: Compare different method of dependency installation - pip, poetry, uv, docker 
+name: Compare docker - pip, poetry, uv
 
 on:
   push:
